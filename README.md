@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hassan Shirazi — Portfolio
 
-## Getting Started
+Game-menu style portfolio site. A bonfire sits at the center of the scene with three characters
+around it (each a link — LinkedIn, GitHub, resume/CV) and a chest that opens into an RPG-style
+inventory screen listing projects.
 
-First, run the development server:
+Built with Next.js (App Router), TypeScript, and Tailwind CSS.
+
+## Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). The scene layout targets a 1920px+ viewport
+(matches the original design's fixed-resolution artwork).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/components/Scene.tsx` — composes the whole scene (bonfire, characters, chest, title, letterbox bars)
+- `src/components/{Bonfire,Cat,BlueGuy,BrownGuy,GreenGuy,Chest}.tsx` — individual scene pieces
+- `src/lib/projects.ts` — project data shown in the chest's inventory panel
+- `src/hooks/useHover.ts` — hover-state hook used for sprite swap / tooltip effects
+- `public/images/` — sprites, backgrounds, and UI chrome art
 
-## Learn More
+## TODO
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `BlueGuy.tsx`, `BrownGuy.tsx`, `GreenGuy.tsx` each have a placeholder `href` (LinkedIn, resume/CV,
+  GitHub respectively) — replace with real URLs.

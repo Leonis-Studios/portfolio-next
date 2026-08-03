@@ -1,0 +1,6 @@
+.cat {
+    position: absolute;
+    bottom: var(--cat-bottom);
+    left: var(--cat-left);
+    z-index: var(--cat-z);
+}

@@ -1,0 +1,33 @@
+.greenGuyContainer {
+    position: absolute;
+    bottom: var(--greenguy-bottom);
+    left: var(--greenguy-left);
+    z-index: var(--greenguy-z);
+
+    .greenGuy {
+        display: block;
+        transition: transform 0.3s;
+    }
+
+    .textContainerGreen {
+        text-align: center;
+    }
+
+    .greenText {
+        position: absolute;
+        top: -27px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .arrowContainerGreen {
+        position: absolute;
+        top: -68px;
+        left: 119px;
+    }
+}
+
+.greenGuy:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}

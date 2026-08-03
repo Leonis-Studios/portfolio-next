@@ -1,0 +1,72 @@
+:root {
+    --resolutionScale: clamp(0.35, calc(100vw / 2560px), 1);
+
+    /* Campfire scene layout — tune positions/stacking here, nowhere else. */
+    --bonfire-bottom: 14.5%;
+    --bonfire-left: 29.5%;
+    --bonfire-z: 1;
+
+    --cat-bottom: 35%;
+    --cat-left: 45%;
+    --cat-z: 4;
+
+    --greenguy-bottom: 20%;
+    --greenguy-left: 26.9%;
+    --greenguy-z: 2;
+
+    --blueguy-bottom: 20.7%;
+    --blueguy-left: 36.4%;
+    --blueguy-z: 2;
+
+    --brownguy-bottom: 19.7%;
+    --brownguy-left: 61%;
+    --brownguy-z: 2;
+
+    --chest-bottom: 23.2%;
+    --chest-left: 53.5%;
+    --chest-z: 2;
+}
+
+.mainContentDiv {
+    position: relative;
+    width: 2560px;
+    height: 1440px;
+    flex-shrink: 0;
+    zoom: var(--resolutionScale);
+    background-image: url("/images/HWP_Static_BG_1920x1080.png");
+    background-size: 2560px 1440px;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-color: #000;
+}
+
+.titleContainer {
+    padding-top: 180px;
+
+    .titleText {
+        text-align: center;
+
+        h1 {
+            color: #9EA8B3;
+        }
+    }
+
+    .chooseCharacter {
+        text-align: center;
+
+        h2 {
+            color: #9EA8B3;
+        }
+    }
+}
+
+.mainPageDiv {
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+}
+
+.blackBar {
+    background-color: black;
+    flex-grow: 1;
+}

@@ -1,0 +1,6 @@
+.bonfire {
+    position: absolute;
+    bottom: var(--bonfire-bottom);
+    left: var(--bonfire-left);
+    z-index: var(--bonfire-z);
+}

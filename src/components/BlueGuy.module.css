@@ -1,0 +1,33 @@
+.blueGuyContainer {
+    position: absolute;
+    bottom: var(--blueguy-bottom);
+    left: var(--blueguy-left);
+    z-index: var(--blueguy-z);
+
+    .blueGuy {
+        display: block;
+        transition: transform 0.3s;
+    }
+
+    .textContainerBlue {
+        text-align: center;
+    }
+
+    .blueText {
+        position: absolute;
+        top: -24px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .arrowContainerBlue {
+        position: absolute;
+        top: -65px;
+        left: 104px;
+    }
+}
+
+.blueGuy:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
