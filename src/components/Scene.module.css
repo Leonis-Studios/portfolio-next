@@ -1,5 +1,6 @@
 :root {
-    --resolutionScale: clamp(0.35, calc(100vw / 2560px), 1);
+    /* Fit the 2560x1440 scene inside the window on both axes. */
+    --resolutionScale: min(calc(100vw / 2560px), calc(100vh / 1440px), 1);
 
     /* Campfire scene layout — tune positions/stacking here, nowhere else. */
     --bonfire-bottom: 14.5%;
@@ -42,6 +43,7 @@
 
 .titleContainer {
     padding-top: 180px;
+    animation: titleIn 1.6s ease-out both;
 
     .titleText {
         text-align: center;
@@ -63,10 +65,20 @@
 .mainPageDiv {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    min-height: 100vh;
     overflow-x: hidden;
 }
 
 .blackBar {
     background-color: black;
     flex-grow: 1;
+}
+
+@keyframes titleIn {
+    from { opacity: 0; transform: translateY(16px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .titleContainer { animation: none; }
 }

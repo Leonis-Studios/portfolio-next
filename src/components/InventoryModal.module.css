@@ -1,0 +1,96 @@
+:root {
+    --modalScale: min(calc(88vw / 2560px), calc(88vh / 920px), 1);
+}
+
+/*
+ * All px offsets below are measured from the art at its native size:
+ *   HWP_Inv_1920x1080_200_W_Divider.png (2560x920): panel fill x 44-1271 | 1288-2515, y 44-875
+ *   HWP_Inner_Inv_w_Textbox_1920x1080.png (1096x688): icon/title/text boxes below
+ */
+.modal {
+    position: relative;
+    width: 2560px;
+    height: 920px;
+    flex-shrink: 0;
+    /* Rendered inside the zoomed scene, so divide that zoom back out to size against the viewport. */
+    zoom: calc(var(--modalScale) / var(--resolutionScale));
+    background: url("/images/HWP_Inv_1920x1080_200_W_Divider.png") no-repeat;
+    background-size: 2560px 920px;
+    animation: popIn 0.25s ease-out;
+}
+
+.overlay {
+    animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.96) translateY(12px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .overlay, .modal { animation: none; }
+}
+
+.leftPanel {
+    position: absolute;
+    top: 44px;
+    left: 44px;
+    width: 1228px;
+    height: 832px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #9f8d04 transparent;
+    scrollbar-gutter: stable both-edges;
+}
+
+/* Centered in the right panel: (1228-1096)/2 = 66, (832-688)/2 = 72. */
+.details {
+    position: absolute;
+    top: 116px;
+    left: 1354px;
+    width: 1096px;
+    height: 688px;
+    background: url("/images/HWP_Inner_Inv_w_Textbox_1920x1080.png") no-repeat;
+    color: gray;
+}
+
+.detailsIcon {
+    position: absolute;
+    top: 84px;
+    left: 84px;
+    width: 168px;
+    height: 168px;
+    object-fit: contain;
+}
+
+.detailsTitle {
+    position: absolute;
+    top: 84px;
+    left: 300px;
+    width: 660px;
+    height: 168px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    font-size: 46px;
+    line-height: 1.2;
+}
+
+.detailsText {
+    position: absolute;
+    top: 300px;
+    left: 84px;
+    width: 876px;
+    height: 324px;
+    padding: 16px 24px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #9f8d04 transparent;
+    font-size: 34px;
+    line-height: 1.35;
+}

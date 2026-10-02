@@ -1,0 +1,27 @@
+.firefly {
+    position: absolute;
+    z-index: 1;
+    width: 6px;
+    height: 6px;
+    background: #e8f78a;
+    box-shadow: 0 0 10px 3px rgba(232, 247, 138, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    animation: wander 9s ease-in-out infinite alternate, blink 4.5s ease-in-out infinite;
+}
+
+@keyframes wander {
+    0% { transform: translate(0, 0); }
+    33% { transform: translate(40px, -30px); }
+    66% { transform: translate(-25px, -55px); }
+    100% { transform: translate(30px, -15px); }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0; }
+    40%, 60% { opacity: 0.9; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .firefly { display: none; }
+}

@@ -1,0 +1,39 @@
+.character {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.character:hover {
+    transform: scale(1.1);
+}
+
+/* Both sprites are always in the DOM so the hover sprite is preloaded; CSS picks which one shows. */
+.hoverSprite,
+.label {
+    display: none;
+}
+
+.character:hover .idleSprite {
+    display: none;
+}
+
+.character:hover .hoverSprite {
+    display: inline;
+}
+
+.character:hover .label {
+    display: flex;
+}
+
+/* Arrow stacked over the label, centered on the character's head point. */
+.label {
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    transform: translate(-50%, -100%);
+    white-space: nowrap;
+    pointer-events: none;
+}
