@@ -12,7 +12,7 @@ export const site = {
   jobTitle: "Software Developer",
   /** ~150 characters. Shown in Google results and link previews, so answer "who is this and what do they do". */
   description:
-    "Hassan Shirazi is a software developer building web apps, Discord bots, and games with React, Node.js, and MongoDB. View projects, skills, and resume.",
+    "Hassan Shirazi is a software developer building web apps, Discord bots, and games with Godot, Next.js, and MongoDB. View projects, skills, and resume.",
   locale: "en_US",
   links: {
     github: "https://github.com/Nyqvuist",
