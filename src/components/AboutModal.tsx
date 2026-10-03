@@ -11,11 +11,7 @@ export default function AboutModal({ onClose }: { onClose: () => void }) {
       <div className={styles.sheet}>
         <div className={styles.header}>
           <div className={styles.portrait}>
-            <img
-              src={about.portrait.src}
-              alt={about.portrait.alt}
-              style={{ objectFit: about.portrait.fit }}
-            />
+            <img src={about.portrait.src} alt={about.portrait.alt} />
           </div>
           <div className={styles.headerText}>
             <h2 className={styles.name}>{about.name}</h2>
@@ -43,13 +39,13 @@ export default function AboutModal({ onClose }: { onClose: () => void }) {
 
         <div className={styles.actions}>
           {about.links.map((link) => {
-            const external = link.href.startsWith("http");
+            const newTab = !link.href.startsWith("mailto:");
             return (
               <a
                 key={link.label}
                 href={link.href}
-                target={external ? "_blank" : undefined}
-                rel={external ? "noopener noreferrer" : undefined}
+                target={newTab ? "_blank" : undefined}
+                rel={newTab ? "noopener noreferrer" : undefined}
                 className={styles.action}
               >
                 {link.label}

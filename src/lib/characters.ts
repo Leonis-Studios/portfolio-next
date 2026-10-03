@@ -1,3 +1,5 @@
+import { site } from "./site";
+
 export interface Character {
   /** Matches the --{id}-bottom / --{id}-left / --{id}-z position vars in Scene.module.css. */
   id: string;
@@ -17,9 +19,8 @@ export interface Character {
 export const characters: Character[] = [
   {
     id: "greenguy",
-    label: "Github",
-    // TODO: replace with real GitHub profile URL
-    href: "https://github.com/TODO-hassan-shirazi",
+    label: "GitHub",
+    href: site.links.github,
     alt: "Green character",
     idleSrc: "/images/HWP_Gr_Idle_Sc200.gif",
     hoverSrc: "/images/HWP_Gr_Turn_Sc200.png",
@@ -30,8 +31,7 @@ export const characters: Character[] = [
   {
     id: "blueguy",
     label: "LinkedIn",
-    // TODO: replace with real LinkedIn profile URL
-    href: "https://www.linkedin.com/in/TODO-hassan-shirazi",
+    href: site.links.linkedin,
     alt: "Blue character",
     idleSrc: "/images/HWP_Blu_Idle_Sc200.gif",
     hoverSrc: "/images/HWP_Blu_Turn_Sc200.png",
